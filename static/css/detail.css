@@ -1,3 +1,41 @@
 body {
-    background-color: #9a2929;
+    background-color: white;
+    
 }
+#formulario-comentario {
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  #formulario-comentario label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  #formulario-comentario input[type="text"],
+  #formulario-comentario textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #formulario-comentario button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #comentarios {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 300px;
+    overflow-y: scroll;
+  }

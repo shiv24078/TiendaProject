@@ -6,6 +6,7 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +15,20 @@
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
     <title>producto info</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 <div class="container">
     <main class="pt-5">
         <div class="row g-3">
-            <div class="col-md-5 col-lg-5 order-md-first bg-light">
-                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}">
+            <div class="zoomable-image">
+                <div class="col-md-5 col-lg-5 order-md-first bg-light">
+                    <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image"
+                        src="{{ product.image.url }}">
+                </div>
             </div>
             <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
                 <h1 class="mb-0 h4">{{ product.title }}</h1>
@@ -48,7 +54,9 @@
 
                             </div>
                             <div class="col-6 text-end">
-<button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">Añandir a mi Cesta</button></div>
+                                <button type="button" id="add-button" value="{{product.id}}"
+                                    class="btn btn-secondary btn-sm">Añandir a mi Cesta</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,6 +66,18 @@
 
 </div>
 
+<div id="comentarios">
+    <!-- Aquí se mostrarán los comentarios -->
+</div>
+<form id="formulario-comentario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br>
+
+    <label for="comentario">Comentario:</label>
+    <textarea id="comentario" name="comentario"></textarea><br>
+
+    <button type="submit">Enviar comentario</button>
+</form>
 <script>
     $(document).on('click', '#add-button', function (e) {
         e.preventDefault();
@@ -71,9 +91,9 @@
                 action: 'post'
             },
             success: function (json) {
-               document.getElementById("basket-qty").innerHTML = json.qty
+                document.getElementById("basket-qty").innerHTML = json.qty
             },
-            error: function (xhr, errmsg, err) {}
+            error: function (xhr, errmsg, err) { }
         });
     })
 </script>
