@@ -3,13 +3,28 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{% static 'js/home.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <title>home</title>
+</head>
+<body>
+  
 
 <main>
 
   <section class="py-5 text-center container">
-    <div class="row py-lg-5">
+    <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Comprar todas las armas</h1>
+        <a href="#" class="text-decoration-none">
+          <h1 class="h1 fw-bold" id="comprar-todas-las-armas">Comprar todas las armas</h1>
+
+        </a>
         <p class="lead text-muted">Armas grandes y pequeñas según tus necessidades</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Crear una cuenta</a>
@@ -19,19 +34,22 @@
   </section>
 
   <div class="album py-5 bg-light">
-    <div class="container">
+    <div class="container-fluid px-md-5">
 
       <div class="pb-3 h5">Todas las armas</div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+      
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
         {% for product in products %}
 
         <div class="col">
           <div class="card shadow-sm">
-            <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+            <img class="img-fluid product-image" alt="Responsive image" src="{{ product.image.url }}">
             <div class="card-body">
               <p class="card-text">
-                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                <a class="text-dark text-decoration-none product-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                
+                <span class="text-muted">€{{ product.price }}</span>
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <small class="text-muted"></small>
@@ -50,3 +68,5 @@
 </main>
 
 {% endblock %}
+</body>
+</html>

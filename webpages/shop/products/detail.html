@@ -1,9 +1,23 @@
-{% extends "../base.html" %}
+{% extends "shop/base.html" %}
 {% load static %}
 {% block title %}
 {{ product.name }}
 {% endblock %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/detail.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <title>producto info</title>
+</head>
+<body>
+    
+</body>
+</html>
 <div class="container">
     <main class="pt-5">
         <div class="row g-3">
@@ -24,16 +38,17 @@
                     <div class="col">
                         <div class="row p-3">
                             <div class="col-6">
-                                <label for="select">Cantidad </label>
+                                <label for="select">Cantidad</label>
                                 <select id="select">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
                                 </select>
 
                             </div>
-                            <div class="col-6 text-end"><button type="button" class="btn btn-secondary btn-sm">Añadir a Cesta</button></div>
+                            <div class="col-6 text-end">
+<button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">Añandir a mi Cesta</button></div>
                         </div>
                     </div>
                 </div>
@@ -42,4 +57,25 @@
     </main>
 
 </div>
+
+<script>
+    $(document).on('click', '#add-button', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "basket:basket_add" %}',
+            data: {
+                productid: $('#add-button').val(),
+                productqty: $('#select option:selected').text(),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+               document.getElementById("basket-qty").innerHTML = json.qty
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
+</script>
+
 {% endblock %}
