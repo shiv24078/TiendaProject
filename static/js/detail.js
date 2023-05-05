@@ -45,7 +45,10 @@ imagenContenedor.addEventListener('mousemove', function(e) {
   imagenContenedor.addEventListener('mouseleave', function() {
     imagen.style.transform = 'scale(1)';
   });
-
+  function toggleFavorite() {
+    const button = document.getElementById("favorite-button");
+    button.classList.toggle("active");
+  }
 
 
 

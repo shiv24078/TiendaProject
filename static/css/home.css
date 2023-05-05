@@ -5,7 +5,7 @@
   object-fit: cover;
 }
 body{
-  background-color: #CCCCCC;
+  background-color: white;
 }
 .product-title {
     height: 50px;
@@ -42,7 +42,7 @@ body{
   .carousel-item {
     max-height: 500px;
     height: 500px;
-    width: 500px;
+    width: 1000px;
     justify-content: center;
   }
   .carousel-container {
@@ -50,8 +50,10 @@ body{
     justify-content: center;
   }
   .carousel-img {
-    max-width: 500px;
+    max-width: 1000px;
     max-height: 500px;
     object-fit:scale-down;
   }
-  
+  #Fondo{
+    background-color: rgb(153, 153, 153);
+  }

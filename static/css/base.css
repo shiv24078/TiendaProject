@@ -53,3 +53,7 @@ html, body, p, div{
 .footer > div > div > ul > li{
     padding-bottom:8px;
 }
+#imagens{
+    width: 100px; 
+  height: 75px; 
+}
