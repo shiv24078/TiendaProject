@@ -4,7 +4,9 @@
   height: 150px;
   object-fit: cover;
 }
-
+body{
+  background-color: #CCCCCC;
+}
 .product-title {
     height: 50px;
     overflow: hidden;
@@ -37,4 +39,19 @@
   .custom-container {
     max-width: 100%; 
   }
-    
+  .carousel-item {
+    max-height: 500px;
+    height: 500px;
+    width: 500px;
+    justify-content: center;
+  }
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel-img {
+    max-width: 500px;
+    max-height: 500px;
+    object-fit:scale-down;
+  }
+  
