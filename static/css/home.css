@@ -57,3 +57,8 @@ body{
   #Fondo{
     background-color: rgb(153, 153, 153);
   }
+
+  .carousel-item {
+    transition: transform 1s ease;
+  }
+  

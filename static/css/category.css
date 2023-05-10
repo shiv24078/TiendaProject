@@ -1,3 +1,43 @@
 body {
     background-color: #1f1da9;
 }
+
+.album {
+    background-color: #f7f7f7;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.product-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover:before {
+    opacity: 1;
+}
+
+.product-title {
+    font-weight: 600;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+}
