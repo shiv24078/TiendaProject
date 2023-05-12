@@ -1,11 +1,12 @@
 
-body{background-color: black; color: aliceblue;}
+body{background-color: #202123; color: aliceblue;
+font-size: 23px;}
 h1{font-size:80px;text-align: center;}
 #presi{
     height: auto;
     width: 100%;
     border-radius: 20%;
-    border: 2px solid white;
+    border: 2px solid gold;
     padding: 10px;
     float: right;
     
@@ -28,5 +29,8 @@ div#rajoyTexto{
     max-width: 100%;
     height: auto;
     float: right;
-    margin: 40px;
+    
+  }
+  a{
+    color: 	#D4AF37;
   }

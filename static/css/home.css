@@ -61,4 +61,16 @@ body{
   .carousel-item {
     transition: transform 1s ease;
   }
-  
+  #mi-boton {
+    background-color: #4CAF50; /* Color de fondo */
+    border: none; /* Quita el borde */
+    color: white; /* Color del texto */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Quita la decoración del texto */
+    display: inline-block; /* Permite ajustar el tamaño */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Espaciado externo */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    border-radius: 5px; /* Agrega bordes redondeados */
+  }
