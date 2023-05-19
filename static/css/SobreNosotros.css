@@ -1,0 +1,36 @@
+
+body{background-color: #202123; color: aliceblue;
+    font-size: 23px;}
+    h1{font-size:80px;text-align: center;}
+    #presi{
+        height: auto;
+        width: 100%;
+        border-radius: 20%;
+        border: 2px solid gold;
+        padding: 10px;
+        float: right;
+        
+    }
+    .imagencita{
+        width: 20%;
+        float: right;
+        margin: 40px;
+    }
+    div#rajoyTexto{
+        width: 100%;
+        float: right;
+        
+    }
+    #presi:hover{
+        box-shadow: 0 0 10px 20px ;
+    }
+    #map { height: 180px; }
+    .Francia {
+        max-width: 100%;
+        height: auto;
+        float: right;
+        
+      }
+      a{
+        color: 	#D4AF37;
+      }
