@@ -14,3 +14,7 @@ var carousel = new bootstrap.Carousel(myCarousel, {
   interval: 4000,
   wrap: true
 })
+const miBoton = document.querySelector("#mi-boton");
+miBoton.addEventListener("click", () => {
+  alert("¡Haz hecho clic en el botón!");
+});
