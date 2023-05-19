@@ -15,24 +15,20 @@
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
     <title>producto info</title>
 </head>
-
-<body >
-
-
-    <div class="container">
+<html>
+<body>
+    <div class="container product-details">
         <main class="pt-5">
             <div class="row g-3">
-                <div class="zoomable-image">
-                    <div class="col-md-5 col-lg-5 order-md-first bg-light">
-                        <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image"
-                            src="{{ product.image.url }}">
-                    </div>
+                <div class="col-md-5 col-lg-5 order-md-first bg-light zoomable-image">
+                    <img class="img-fluid mx-auto d-block product-image" alt="Responsive image"
+                        src="{{ product.image.url }}">
                 </div>
                 <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
-                    <h1 class="mb-0 h4">{{ product.title }}</h1>
-                    <p><span class="lead">{{ product.author }}</span> (Author)</p>
-                    <p>{{ product.description|slice:":355" }}...</p>
-                    <div class="border">
+                    <h1 class="mb-0 h4 product-title">{{ product.title }}</h1>
+                    <p class="product-author"><span class="lead">{{ product.author }}</span> (Author)</p>
+                    <p class="product-description">{{ product.description|slice:":355" }}...</p>
+                    <div class="product-pricing border">
                         <div class="col border-bottom">
                             <div class="row p-3">
                                 <div class="col-6">Precio</div>
@@ -62,32 +58,33 @@
                 </div>
             </div>
         </main>
-
+        <div class="comments-section">
+            <h2>Comments</h2>
+            <div id="comentarios">
+                <!-- Aquí se mostrarán los comentarios -->
+                <p> -Shiv- Secuestraron a mi abuela. Gracias</p>
+                <p> -LLuc- Ayuda, creo que tienen mi casa rodeada</p> 
+                <p> -Manolo- Me enviaron las armas desmontadas y las piezas que no eran</p>
+                <p> -Gonofredo- ¿Quien es Manolo? </p>
+                <p> -Franco- Buenas armas, pero ¿porque me ha escrito el gobierno chino? </p>
+                <p> -Paco- Vendo Opel Corsa nuevecito</p>
+                <p> -Calculator -1*7=87 </p>
+                <p> -Otto von Bismark- grnades armas para grandes guerras </p>
+                <p> -Manuela- Vengan a mi tienda si quieren ricos tamales </p>
+                <p> -Fraser- Mi Familia ha sido secuestrada por el gobierno de mozambique </p>
+            </div>
+            <form id="formulario-comentario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+    
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario"></textarea><br>
+    
+                <button type="submit">Enviar comentario</button>
+            </form>
+        </div>
+    
     </div>
-
-    <div id="comentarios">
-        <p> -Shiv- Secuestraron a mi abuela</p>
-        <p> -Sara- Ayuda, creo que tienen mi casa rodeada</p> 
-        <p> -Manolo- Me enviaron las armas desmontadas y las piezas que no eran</p>
-        <p> -Gonofredo- ¿Quien es Manolo? </p>
-        <p> -Franco- Buenas armas, pero ¿porque me ha escrito el gobierno chino? </p>
-        <p> -Paco- Vendo Opel Corsa nuevecito</p>
-        <p> -Calculator -1*7=87 </p>
-        <p> -Otto von Bismark- grnades armas para grandes guerras </p>
-        <p> -Manuela- Vengan a mi tienda si quieren ricos tamales </p>
-        <p> -Fraser- Mi Familia ha sido secuestrada por el gobierno de mozambique </p>
-    </div>
-    <form id="formulario-comentario">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"><br>
-
-        <label for="comentario">Comentario:</label>
-        <textarea id="comentario" name="comentario"></textarea><br>
-
-        <button type="submit">Enviar comentario</button>
-    </form>
-</body>
-
 </html>
 <script>
     $(document).on('click', '#add-button', function (e) {

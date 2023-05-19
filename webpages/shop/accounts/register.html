@@ -1,23 +1,24 @@
-{% extends 'shop/base.html' %}
-
+{% extends "../base.html" %}
+{% load static %}
 {% block title %}Register{% endblock %}
-
 {% block content %}
-  <h2>Register</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-    <button type="submit" class="btn btn-primary">Register</button>
-    <div class="form-group">
-        <label for="id_password2">Repeat password</label>
-        {{ form.password2 }}
-        {% if form.password2.errors %}
-            <div class="alert alert-danger">
-                {{ form.password2.errors }}
-            </div>
-        {% endif %}
-    </div>
-    
-  </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<h2>Register</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+</body>
+</html>
 {% endblock %}

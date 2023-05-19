@@ -66,6 +66,12 @@
       <div class="container-fluid px-md-5">
 
         <div class="pb-3 h5">Todas las armas</div>
+        <button onclick="location.href='{% url 'shop:products_all' %}?order=price'">Order by price</button>
+        <button onclick="location.href='{% url 'shop:products_all' %}'">El ultimo</button>
+        
+
+
+
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
