@@ -39,14 +39,6 @@ def reset_password(request):
     pass
 
 
-class CustomPasswordResetView(PasswordResetView):
-    template_name = 'shop/accounts/password_reset.html'
-    email_template_name = 'shop/accounts/password_reset_email.html'
-    success_url = reverse_lazy('accounts:password_reset_done')
-
-class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'shop/accounts/password_reset_confirm.html'
-    success_url = reverse_lazy('accounts:password_reset_complete')
 
 
 def change_password(request):

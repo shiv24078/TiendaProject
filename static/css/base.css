@@ -57,7 +57,14 @@ html, body, p, div{
     width: 100px; 
   height: 75px; 
 }
-
+.footer {
+    background-color: #868e96;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.5;
+}
 .footer-content {
     height: 200px;
     padding: 20px;
